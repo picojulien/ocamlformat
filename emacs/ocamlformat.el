@@ -82,7 +82,7 @@ a `before-save-hook'."
   "Add this to .emacs to run ocamlformat on the current buffer when saving:
  (add-hook 'before-save-hook 'ocamlformat-before-save)."
     (interactive)
-      (when (eq major-mode 'tuareg-mode) (ocamlformat)))
+      (when (or (eq major-mode 'tuareg-mode) (eq major-mode 'tuareg)) (ocamlformat)))
 
 (defun ocamlformat--goto-line (line)
   (goto-char (point-min))
